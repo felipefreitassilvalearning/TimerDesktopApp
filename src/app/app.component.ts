@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { interval, takeWhile, tap } from 'rxjs';
 
 
@@ -19,8 +19,9 @@ export class AppComponent {
     //   .takeWhile((_: unknown) => !this.isFinished)
     //   .do((i: unknown) => this.current += 0.1)
     //   .subscribe();
-
-    interval(1000).pipe(
+    const duration = interval(100);
+    
+    duration.pipe(
       takeWhile((_: unknown) => !this.isFinished),
       tap((_: unknown) => this.current += 0.1)
     ).subscribe();

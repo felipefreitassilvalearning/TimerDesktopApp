@@ -21,16 +21,30 @@
   </div>
 
   <div class="controls-wrapper">
-    <div *ngIf="isFinished">
+    <div>
       <label>Seconds</label>
       <input
+        class="input"
+        placeholder="number of seconds"
         type="text"
         [(ngModel)]="max"
         (keydown)="reset()"
       >
     </div>
 
-    <button *ngIf="currentVal <= 0" (click)="start()">Start</button>
-    <button *ngIf="!isFinished" (click)="finish()">Finish</button>
+    <button
+      class="button is-info"
+      *ngIf="currentVal <= 0"
+      (click)="start()"
+    >
+      Start
+    </button>
+    <button
+      class="button is-danger"
+      *ngIf="!isFinished"
+      (click)="finish()"
+    >
+      Finish
+    </button>
   </div>
 </main>
