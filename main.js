@@ -12,9 +12,6 @@ function createWindow() {
 
     win.loadURL(`file://${__dirname}/dist/angular-electron/index.html`)
 
-    // Remove when app is ready
-    win.webContents.openDevTools()
-
     win.on('closed', function () {
         win = null
     })
